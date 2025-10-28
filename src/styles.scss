@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+}
+
+.container{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container-fluid{
+    padding: 12px 15px 15px 15px;
+}
+.navbar{
+    padding: 0;
+}
+
+.navbar-brand{
+    font-size: 20px;
+}
+
+.nav-link{
+    font-size: 16px;
+}
+.btn{
+    /* Найти */
+    font-size: 16px;
+    line-height: 18px;
+    width: 100px;
+    text-align: center;
+    padding: 8px;
+}
+
+
+.main-container{
+    padding-top: 72px;
+    padding-bottom: 36px;
+}
+
+
+
+
+.btn{
+    width: 170px;
+    height: 38px;
+}
+.products-container{
+    padding-top: 36px;
+}
+.products-title{
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.card-title{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.question-title{
+    margin-top: 72px;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.accordion{
+    max-width: 856px;
+}
+.accordion-button{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+.accordion-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.accordion-item{
+    margin-bottom: 16px;
+}
+
+.title-form{
+    margin-top: 72px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.container-form{
+    max-width: 636px;
+    margin-bottom: 48px;
+}
+
+.button-form{
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 156px;
+    height: 38px;
+}
+
+.invalid-feedback{
+  display: block;
+}

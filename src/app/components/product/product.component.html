@@ -1,0 +1,19 @@
+<div class="card" *ngIf='loading === false && product' style="padding-top: 100px;">
+  <img [src]="product.image" alt="{{ product.title }}" class="card-img-top" />
+  <div class="card-body">
+    <h3 class="card-title">{{ product.title }}</h3>
+    <p class="product-price">{{ product.price }} ₽</p>
+    <p class="card-text">{{ product.description }}</p>
+    <a
+      class="btn btn-primary text-center"
+      routerLink="/order"
+      [queryParams]="{ title: product.title }"
+    >
+      Заказать
+    </a>
+  </div>
+</div>
+
+<div class="spinner-border text-primary" role="status" *ngIf="loading">
+  <span class="visually-hidden">Loading...</span>
+</div>

@@ -1,0 +1,43 @@
+<section>
+<div class="container-sm text-center products-container" style="padding-top: 100px;">
+    <div class="products-title wow animate__fadeInUp">
+      Наши чайные коллекции
+    </div>
+    <div class="products" *ngIf="!loading || products.length > 0">
+      <div class="d-flex flex-wrap justify-content-center" style="gap: 24px">
+        <div
+          class="card"
+          *ngFor="let product of products; trackBy: trackByFn"
+        >
+          <img
+            [src]="product.image"
+            alt="{{ product.title }}"
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h3 class="card-title">{{ product.title }}</h3>
+            <p class="product-price">{{ product.price }} ₽</p>
+            <p class="card-text">{{ product.description | shortText }}</p>
+          </div>
+          <div class='d-flex justify-content-center align-items-center'>
+            <a
+              class="btn btn-primary text-center"
+              routerLink="/catalog/{{ product.id }}"
+              [queryParams]="{ id: product.id }"
+            >
+              Подробнее
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <p *ngIf="!loading && products.length === 0" class="mt-4">
+            По вашему запросу ничего не найдено.
+        </p>
+    </div>
+    <div class="spinner-border text-primary" role="status" *ngIf="loading">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+.slider img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+
+.button-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid #076bfd;
+  background: rgb(253, 253, 253);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-arrow:hover {
+  background: rgb(197, 195, 195);
+}
+.button-arrow.left {
+  left: 16px;
+  top: 50%;
+}
+
+.button-arrow.right {
+  right: 16px;
+  top: 50%;
+}
+
+.main-container {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .button-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+

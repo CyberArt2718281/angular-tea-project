@@ -1,0 +1,19 @@
+<main >
+  <div class="container-sm text-center main-container wow animate__backInDown" style="padding-top: 100px;">
+    <ngx-slick-carousel class="slider" [config]="slideConfig" #slickModal>
+      <div ngxSlickItem *ngFor="let slide of slides; trackBy: trackByFn" class="slide">
+        <div>
+          <img [src]="slide.img" alt="Слайд" />
+        </div>
+      </div>
+    </ngx-slick-carousel>
+    <button class="button-arrow left" (click)="slickModal.slickPrev()">
+      <img src="assets/images/prevArrow.svg" />
+    </button>
+    <button class="button-arrow right" (click)="slickModal.slickNext()">
+      <img src="assets/images/nextArrow.svg" />
+    </button>
+  </div>
+  <app-answers></app-answers>
+  <app-popup></app-popup>
+</main>

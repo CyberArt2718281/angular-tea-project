@@ -1,0 +1,179 @@
+<section>
+  <div class="container-sm container-form mx-auto">
+    <div class="title-form text-center wow animate__fadeInUp" id="title-form" *ngIf='isShowForm'>
+      Сделать заказ
+    </div>
+    <div class="title-form thankYouMessage text-center" *ngIf='isSuccess' >
+      Спасибо за заказ!
+    </div>
+    <div class="title-form thankYouMessage text-center" *ngIf='isError' >
+      Возникла ошибка при создании заказа.
+    </div>
+    <form class="row g-3 wow animate__fadeInUp" id="form" [formGroup]="teaForm" *ngIf='isShowForm'>
+      <div class="col-md-4">
+        <label class="form-label">Имя</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputFirstName"
+          formControlName="name"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('name')?.invalid &&
+            (teaForm.get('name')?.touched || teaForm.get('name')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('name')?.errors?.['required']">
+            Введите ваше имя
+          </div>
+          <div *ngIf="teaForm.get('name')?.errors?.['pattern']">
+            Имя должно содержать только буквы и начинаться с заглавной буквы
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Фамилия</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputLastName"
+          formControlName="last_name"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('last_name')?.invalid &&
+            (teaForm.get('last_name')?.touched ||
+              teaForm.get('last_name')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('last_name')?.errors?.['required']">
+            Введите вашу фамилию
+          </div>
+          <div *ngIf="teaForm.get('last_name')?.errors?.['pattern']">
+            Фамилия должно содержать только буквы и начинаться с заглавной буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Телефон</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPhoneNumber"
+          formControlName="phone"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('phone')?.invalid &&
+            (teaForm.get('phone')?.touched || teaForm.get('phone')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('phone')?.errors?.['required']">
+            Введите ваш телефон
+          </div>
+          <div *ngIf="teaForm.get('phone')?.errors?.['invalidPhone']">
+            Введите телефон корректно
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <label class="form-label">Страна</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputCounty"
+          formControlName="country"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('country')?.invalid &&
+            (teaForm.get('country')?.touched || teaForm.get('country')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('country')?.errors?.['required']">
+            Введите вашу страну
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <label class="form-label">Zip</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputIndex"
+          formControlName="zip"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('zip')?.invalid &&
+            (teaForm.get('zip')?.touched || teaForm.get('zip')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('zip')?.errors?.['required']">
+            Введите zip
+          </div>
+          <div *ngIf="teaForm.get('zip')?.errors?.['invalidZip']">
+            Введите zip корректно
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Адрес</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          formControlName="address"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            teaForm.get('address')?.invalid &&
+            (teaForm.get('address')?.touched || teaForm.get('address')?.dirty)
+          "
+        >
+          <div *ngIf="teaForm.get('address')?.errors?.['required']">
+            Введите адрес
+          </div>
+          <div *ngIf="teaForm.get('address')?.errors?.['invalidAddress']">
+            Введите адрес корректно
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Название чая</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          formControlName="product"
+        />
+      </div>
+      <div class="col-md-12">
+        <label class="form-label">Комментарий</label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="inputAddress"
+        ></textarea>
+      </div>
+      <div class="col-12">
+        <button
+          type="submit"
+          class="btn btn-primary button-form"
+          (click)="createOrder()"
+          [disabled]="teaForm.invalid"
+        >
+          Отправить
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

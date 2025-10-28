@@ -1,0 +1,11 @@
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.header{
+	position:fixed;
+	z-index:100000;
+	width: 100%;
+}
